@@ -1,0 +1,6 @@
+# install4j response file for Liquibase 4.3.5
+liquibase.addToPath$Boolean=true
+liquibase.openInstallDirectory$Boolean=true
+sys.adminRights$Boolean=true
+sys.installationDir=D\:\\Applications\\Liquibase\\liquibase
+sys.languageId=en
