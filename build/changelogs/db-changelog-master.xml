@@ -5,4 +5,6 @@
 
     <include file="build/tags/v1.xml" />
 
+    <include file="build/changesets/load_countries.sql" />
+
 </databaseChangeLog>
