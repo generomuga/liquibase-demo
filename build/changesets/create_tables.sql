@@ -1,7 +1,7 @@
 --liquibase formatted sql
 
---changeset postgres:create_table_persons context:schema splitStatements:false rollbackSplitStatements:false
---comment: Create table persons
+--changeset postgres:create_tables context:schema splitStatements:false rollbackSplitStatements:false
+--comment: Create tables
 
 
 
@@ -12,7 +12,7 @@ CREATE TABLE persons (
   gender int,
   dose_id int,
   country_id int,
-  created_at timestamp
+  created_at timestamp default now()
 );
 
 CREATE TABLE vaccines (
@@ -20,13 +20,13 @@ CREATE TABLE vaccines (
   name varchar,
   description varchar,
   country_id int,
-  created_at timestamp
+  created_at timestamp default now()
 );
 
 CREATE TABLE countries (
   id SERIAL PRIMARY KEY,
   name varchar,
-  created_at timestamp
+  created_at timestamp default now()
 );
 
 CREATE TABLE doses (
@@ -34,7 +34,7 @@ CREATE TABLE doses (
   person_id int,
   vaccine_id int,
   dose int,
-  created_at timestamp
+  created_at timestamp default now()
 );
 
 ALTER TABLE persons ADD FOREIGN KEY (country_id) REFERENCES countries (id);
